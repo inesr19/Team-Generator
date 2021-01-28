@@ -1,7 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
+const inquirer = require('inquirer')
 const path = require("path");
 const fs = require("fs");
 
@@ -13,43 +13,14 @@ const render = require("./lib/htmlRender");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-const questions = [
-    {
-        type: 'input',
-        name: 'managerName',
-        message: 'Please input manager name.',
-    },
-    {
-        type: 'input',
-        name: 'managerId',
-        message: 'Please input manager id.'
-    },
-    {
-        type: 'input',
-        name: 'managerEmail',
-        message: 'Please input manager email.'
-    },
-    {
-        type: 'input',
-        name: 'managerNumber',
-        message: 'Please input manager office number.'
-    },
-    {
-        type: 'input',
-        name: 'manager',
-        message: 'Please input manager id.'
-    },
-    {
-        type: 'list',
-        name: 'employees',
-        message: 'What team member would you life to add?.',
-        choices: ['engineer', 'intern', 'finish building team']
-    },
-]
+let members = [];
+
+const 
+
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
