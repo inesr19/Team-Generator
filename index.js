@@ -13,7 +13,39 @@ const render = require("./lib/htmlRender");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
+const questions = [
+    {
+        type: 'input',
+        name: 'managerName',
+        message: 'Please input manager name.',
+    },
+    {
+        type: 'input',
+        name: 'managerId',
+        message: 'Please input manager id.'
+    },
+    {
+        type: 'input',
+        name: 'managerEmail',
+        message: 'Please input manager email.'
+    },
+    {
+        type: 'input',
+        name: 'managerNumber',
+        message: 'Please input manager office number.'
+    },
+    {
+        type: 'input',
+        name: 'manager',
+        message: 'Please input manager id.'
+    },
+    {
+        type: 'list',
+        name: 'employees',
+        message: 'What team member would you life to add?.',
+        choices: ['engineer', 'intern', 'finish building team']
+    },
+]
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
@@ -34,8 +66,23 @@ const render = require("./lib/htmlRender");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
-function Employee(name, id, email) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
-}
+// function Employee(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.buildHtml = function buildHtml() {
+        
+//     }
+//     this.getName = () => {
+        
+//     }
+// }
+
+// function Managers(name, id, role, number) {
+//     this.role = role;
+//     this.number = number;
+//     Employee.call(this, name, id);
+// }
+
+// const manager = new Managers('');
+
+// manager.buildHtml();
