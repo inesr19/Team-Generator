@@ -4,7 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require('inquirer')
 const path = require("path");
 const fs = require("fs");
-
+    
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
@@ -13,9 +13,43 @@ const render = require("./lib/htmlRender");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-let members = [];
 
-const 
+let employee = [];
+
+const questions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: `What is the ${roles}'s name?`
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: `What is the ${roles}'s id?`
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: `What is the ${roles}'s email?`
+    }
+];
+
+if(role === 'Manager') 
+    questions.push({
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is your office phone number?'
+    }); 
+    else if(role === 'Engineer') 
+        questions.push({
+          type: 'input',
+          name: 'github',
+          message: 'What is your github username??'
+        });
+    else {
+        return questions;
+    }
+    
 
 
 // After the user has input all employees desired, call the `render` function (required
@@ -36,24 +70,3 @@ const
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
-
-// function Employee(name, id) {
-//     this.name = name;
-//     this.id = id;
-//     this.buildHtml = function buildHtml() {
-        
-//     }
-//     this.getName = () => {
-        
-//     }
-// }
-
-// function Managers(name, id, role, number) {
-//     this.role = role;
-//     this.number = number;
-//     Employee.call(this, name, id);
-// }
-
-// const manager = new Managers('');
-
-// manager.buildHtml();
