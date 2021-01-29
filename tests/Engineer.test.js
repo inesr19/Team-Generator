@@ -1,2 +1,4 @@
 const Employee = require('../lib/Employee');
-const Engineer = require('../lib/Engineer')
+const Engineer = require('../lib/Engineer');
+
+test()
